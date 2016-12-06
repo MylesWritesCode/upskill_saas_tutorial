@@ -28,28 +28,20 @@
     background-attachment: fixed;
 }
 
-
+// Navbar style.
 .navbar {
     border: none;
     border-radius: 0px;
 }
 
-.navbar-default .navbar-brand,  {
-    color: white;
-}
-
+// Navbar text and hover colors.
+.navbar-default .navbar-brand,
 .navbar-default .navbar-nav > li > a {
     color: white;
-}
-
-.navbar-default .navbar-brand:hover {
-    color: white;
-    opacity: 0.75;
-}
-
-.navbar-default .navbar-nav > li > a {
-    color:white;
-    opacity: 0.75;
+    &:hover {
+        color: white;
+        opacity: 0.75;
+    }
 }
 
 h1, h2, h3, p {
