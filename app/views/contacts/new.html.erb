@@ -4,9 +4,6 @@
         
         <br>
         <div class="col-md-4 col-md-offset-4">
-        <% flash.each do |key, value| %>
-            <div class="alert alert-<%= key %> text-center"><%= value %></div>
-        <% end %> 
             <div class="well">
                 <%= form_for @contact do |f| %>
                     <div class="form-group">
