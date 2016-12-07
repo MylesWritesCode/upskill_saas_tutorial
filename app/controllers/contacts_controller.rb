@@ -10,7 +10,7 @@ class ContactsController < ApplicationController
             flash[:success]= "Message sent."
         else
             redirect_to new_contact_path 
-            flash[:warning]= "Error occured."
+            flash[:warning]= @contact.errors.full_messages.join. (", ")
         end
     end
     
