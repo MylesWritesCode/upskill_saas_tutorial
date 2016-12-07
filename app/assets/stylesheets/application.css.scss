@@ -36,8 +36,20 @@
     border-radius: 0px;
 }
 
-// Navbar Brand style
+// Navbar hamburger menu button
+.navbar-default .navbar-toggle .icon-bar {
+    background: white;
+}
 
+.navbar-default .navbar-toggle {
+    border: 2px solid white;
+    &:hover, &:focus {
+        background-color: #43cea2;
+        opacity: 1;
+    }
+}
+
+// Navbar Brand style
 .navbar-brand {
     font-family: 'Oswald', sans-serif;
     font-weight: 800;
