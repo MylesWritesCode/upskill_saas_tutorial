@@ -77,3 +77,8 @@ h1, h2, h3, p {
     padding-bottom: 100px;
     color: white;
 }
+
+// Hides default devise notices when signing in and logging out.
+.alert-notice {
+    display: none;
+}
