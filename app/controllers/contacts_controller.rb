@@ -16,12 +16,22 @@ class ContactsController < ApplicationController
             redirect_to new_contact_path
 
         else
-            flash[:warning]= @contact.errors.full_messages.join(", ")
+            # The following code is trying to get all the error messages to show.
+            # @contact.errors.each do |msg|
+                # flash[:warning] = ("#{msg.capitalize} can't be blank.")
+            # end
+            
+            # All of the error messages show with the following code, but they aren't showing how I want them to.
+            # flash[:warning]= @contact.errors.full_messages.join(", ")
+            
+            # This code will show whenever there are any errors, but won't be specific as to why there's an error.
+            flash[:warning]= "Please fill out all of the form fields."
             redirect_to new_contact_path
         end
     end
     
     private
+        # To collect data from form, we need to use strong parameters and whitelist form fields.
         def contact_params
             params.require(:contact).permit(:name, :email, :comments)
         end
