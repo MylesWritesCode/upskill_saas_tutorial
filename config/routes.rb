@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
     root to: 'pages#home' # root to path denoting the root directory of a website (www.example.com as opposed to www.example.com/home) showing the home view from the pages controller.
     get 'about', to: 'pages#about' # Route that gets about requests and pulls the about view in the pages controller.
     resources :contacts, only: :create # Demonstrating the use of resources when creating routes to a corresponding controller, and limiting the amount of routes created with either an array or single verb.
