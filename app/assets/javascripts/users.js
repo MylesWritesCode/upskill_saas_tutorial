@@ -36,7 +36,6 @@ $(document).on('turbolinks:load', function(){
             error = true;
             alert('The expiration date appears to be invalid.');
         }
-        
         if(error) {
             submitBtn.val("Sign Up").prop('disabled', false)
         } else {
