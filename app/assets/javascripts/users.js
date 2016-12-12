@@ -37,7 +37,7 @@ $(document).on('turbolinks:load', function(){
             alert('The expiration date appears to be invalid.');
         }
         if(error) {
-            submitBtn.val("Sign Up").prop('disabled', false)
+            submitBtn.val("Sign Up").prop('disabled', false);
         } else {
             // Send card information to Stripe
             Stripe.createToken({
@@ -55,7 +55,7 @@ $(document).on('turbolinks:load', function(){
         var token = response.id;
         
         // Inject card token as hidden field into form
-        theForm.append( $('<input type="hidden" name"user[stripe_card_token]">').val(token) );
+        theForm.append( $('<input type="hidden" name="user[stripe_card_token]">').val(token) );
         
         // Submit form to Rails app
         theForm.get(0).submit();
