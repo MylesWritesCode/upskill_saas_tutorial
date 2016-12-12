@@ -21,6 +21,7 @@
 
 body {
     position: relative;
+    width: 100%;
 }
 
 // Background gradient.
@@ -99,9 +100,10 @@ h1, h2, h3, p {
     margin-top: -14px;
 }
 
-.profile-link-on-homepage a {
+.quest a {
     color: white;
 }
-.row .newsfeed {
+
+.quest {
     margin-top: 30px;
 }
