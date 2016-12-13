@@ -1,7 +1,22 @@
-<div class="quest">
-  <div class="container col-md-4 col-md-offset-4">
-    <div class="btn btn-block btn-lg btn-info">
-      <%= link_to "Create your profile!", new_user_profile_path(user_id: current_user.id) if user_signed_in? %>
+<!--<div class="quest">-->
+<!--  <div class="container col-md-4 col-md-offset-4">-->
+<!--    <div class="btn btn-block btn-lg btn-info">-->
+<!--      <%= link_to "Create your profile!", new_user_profile_path(user_id: current_user.id) if user_signed_in? %>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <div class="jumbotron">
+        <h1 class="text-center">Welcome to DevMatch!<h1>
+        <p>
+          We are a company that specializes in bringing developers, entrepreneurs, and investors together to create the programs people need. 
+          Build a profile in order to enhance your account and connect with people. Simply click the button below to begin!
+        </p>
+          <%= link_to "Create your profile!", (new_user_profile_path(user_id: current_user.id) if user_signed_in?), { class: "btn btn-primary btn-lg center-block" } %>
+      </div>
     </div>
   </div>
 </div>

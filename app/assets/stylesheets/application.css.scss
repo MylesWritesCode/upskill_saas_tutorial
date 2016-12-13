@@ -101,11 +101,12 @@ h1, h2, h3, h4, h5, p {
     margin-top: -14px;
 }
 
-.quest a {
-    color: white;
-}
-
 // Small margin class
 .small-margin {
     margin: 1px;    
+}
+
+// Normalize well heights for signup links on home page.
+.well-signup-homepage {
+    height: 300px;
 }
