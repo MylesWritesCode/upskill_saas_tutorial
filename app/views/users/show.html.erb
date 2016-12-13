@@ -3,6 +3,7 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-3 col-md-offset-1">
+      <%= image_tag @user.profile.avatar.url %>
       <%= content_tag :h1, @user.profile.first_name, class: "small-margin" %>
       <%= content_tag :h1, @user.profile.last_name, class: "small-margin" %>
       <%= content_tag :h3, @user.profile.job_title, class: "small-margin" %>
