@@ -9,8 +9,12 @@
           </h1>
         </div>
         <ul class="list-group">
-          <li class="list-group-item">
-            <%= image_tag @user.profile.avatar.url, class: "img-responsive center-block avatar-large" %>
+          <li class="list-group-item profile-image-box">
+            <% if @user.profile.avatar.exists? %>
+              <%= image_tag @user.profile.avatar.url, class: "img-responsive center-block avatar-large" %>
+            <% else %>
+              <%= image_tag "DevMatch.png" %>
+            <% end %>
           </li>
           <li class="list-group-item text-box">
             <h3 class="text-center no-margin">
@@ -35,7 +39,7 @@
           <% else %>
             <li class="list-group-item text-box">
               <!--Eventually add a link to update subscription to pro membership.-->
-              <p>For access to contact information, sign up with a pro membership!</p>
+              <p class="text-center">For access to contact information, sign up with a pro membership!</p>
             </li>
           <% end %>
         </ul>
