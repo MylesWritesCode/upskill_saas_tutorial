@@ -5,12 +5,12 @@
         <% if current_user.profile.avatar.exists? %>
           <%= image_tag current_user.profile.avatar.url, class: "img-responsive center-block avatar-large margin-bottom-10" %>
         <% end %>
-        <%= link_to "Edit your profile", "#EditProfileLink", class: "btn btn-default btn-lg btn-block" %>
+        <%= link_to "Edit your profile", edit_user_profile_path(current_user.id), class: "btn btn-default btn-lg btn-block" %>
         <%= link_to "View your profile", user_path(current_user.id), class: "btn btn-default btn-lg btn-block" %>
       </div>
     </div>
     <div class="col-md-8">
-      <% if current_user.profile %>
+      <% if !current_user.profile %>
         <div class="jumbotron">
           <h1 class="text-center">Welcome to DevMatch!<h1>
           <p>
