@@ -1,13 +1,31 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-6 col-md-offset-3">
+    <div class="col-md-2">
+      <div class="well">
+        <% if current_user.profile.avatar.exists? %>
+          <%= image_tag current_user.profile.avatar.url, class: "img-responsive center-block avatar-large margin-bottom-10" %>
+        <% end %>
+        <%= link_to "Edit your profile", "#EditProfileLink", class: "btn btn-default btn-lg btn-block" %>
+        <%= link_to "View your profile", user_path(current_user.id), class: "btn btn-default btn-lg btn-block" %>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <% if current_user.profile %>
+        <div class="jumbotron">
+          <h1 class="text-center">Welcome to DevMatch!<h1>
+          <p>
+            We are a company that specializes in bringing developers, entrepreneurs, and investors together to create the programs people need. 
+            Build a profile in order to enhance your account and connect with people. Simply click the button below to begin!<br><br>
+          </p>
+            <%= link_to "Create your profile!", (new_user_profile_path(user_id: current_user.id)), { class: "btn btn-primary btn-lg center-block" } %>
+        </div>
+      <% end %>
       <div class="jumbotron">
-        <h1 class="text-center">Welcome to DevMatch!<h1>
-        <p>
-          We are a company that specializes in bringing developers, entrepreneurs, and investors together to create the programs people need. 
-          Build a profile in order to enhance your account and connect with people. Simply click the button below to begin!
+        <h1 class="text-center">The Community</h1>
+        <p class="text-center">
+          Visit the community to meet other developers, entrepreneurs, and investors.
         </p>
-          <%= link_to "Create your profile!", (new_user_profile_path(user_id: current_user.id) if user_signed_in?), { class: "btn btn-primary btn-lg center-block" } %>
+          <%= link_to "Visit the community now", "#", class: "btn btn-default btn-lg center-block" %>
       </div>
     </div>
   </div>
