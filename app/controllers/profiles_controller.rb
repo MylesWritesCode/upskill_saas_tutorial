@@ -40,7 +40,7 @@ class ProfilesController < ApplicationController
       # Redirect user to their profile page.
       redirect_to user_path(id: params[:user_id])
     else
-      render action : :edit
+      render action: :edit
     end
   end
   
