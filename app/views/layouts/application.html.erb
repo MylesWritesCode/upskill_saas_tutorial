@@ -32,10 +32,12 @@
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Menu<span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                  <li><a href="#">Action</a></li>
-                  <li><a href="#">Another action</a></li>
-                  <li><a href="#">Something else here</a></li>
-                  <li role="separator" class="divider"></li>
+                  <% if user_signed_in? %>
+                    <li><%= link_to "Community", users_path %></li>
+                    <li><%= link_to "Account", edit_user_registration_path %></li>
+                    <li><%= link_to "Profile", user_path(current_user.id) %></li>
+                    <li role="separator" class="divider"></li>
+                  <% end %>
                   <li><%= link_to "About", about_path %></li>
                   <li><%= link_to "Contact Us", new_contact_path %></li> <!-- This is the new contact link thats routed to the contact-us page in the routes.rb file. -->
                 </ul>

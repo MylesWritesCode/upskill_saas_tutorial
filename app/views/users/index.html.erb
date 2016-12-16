@@ -29,7 +29,12 @@
                     <%= user.profile.last_name %>
                   </h3>
                 <% end %>
-                <h4 class="text-black"><%= user.profile.job_title %></h4>
+                <h4 class="text-black">
+                  <%= user.profile.job_title %> 
+                  <% if user.plan_id == 2%>
+                    <span class="label label-danger">PRO</span>
+                  <% end %>
+                </h4>
               </li>
           <% end %>
         <% end %>
