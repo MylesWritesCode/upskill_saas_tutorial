@@ -2,11 +2,38 @@
   <div class="row">
     <div class="col-md-2">
       <div class="well">
+        <% if current_user.profile.avatar.exists? %>
+          <%= image_tag current_user.profile.avatar.url, class: "img-responsive center-block avatar-large margin-bottom-10" %>
+        <% end %>
+        <%= link_to "Edit your profile", edit_user_profile_path(current_user.id), class: "btn btn-default btn-lg btn-block" %>
+        <%= link_to "View your profile", user_path(current_user.id), class: "btn btn-default btn-lg btn-block" %>
       </div>
     </div>
     <div class="col-md-8">
-      <div class="well">
-      </div>
+      <ul class="list-group">
+        <% @users.each do |user| %>
+          <% if user.profile %>
+              <li class="list-group-item row <%= cycle('list-group-item-info', '') %>">
+                <div class="col-md-2">
+                  <%= link_to user do %>
+                    <% if user.profile.avatar.exists? %>
+                      <%= image_tag user.profile.avatar.url, class: "img-responsive index-page-directory-avatar no-margin" %>
+                    <% else %>
+                      <%= image_tag "DevMatch.png", class: "img-responsive index-page-directory-avatar no-margin" %>
+                    <% end %>
+                  <% end %>
+                </div>
+                <%= link_to user do %>
+                  <h3 class="text-black">
+                    <%= user.profile.first_name %>
+                    <%= user.profile.last_name %>
+                  </h3>
+                <% end %>
+                <h4 class="text-black"><%= user.profile.job_title %></h4>
+              </li>
+          <% end %>
+        <% end %>
+      </ul>
     </div>
     <div class="col-md-2">
       <div class="well">
